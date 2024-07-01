@@ -1,0 +1,127 @@
+data_path: /data/disk1/share/luriz/datasets/s3dis_data
+dataset_path: /data/disk1/share/luriz/datasets/s3dis_data
+
+labels:
+  0: ceiling
+  1: floor
+  2: wall
+  3: beam
+  4: column
+  5: window
+  6: door
+  7: table
+  8: chair
+  9: sofa
+  10: bookcase
+  11: board
+  12: clutter
+
+learning_map:
+  0: 0 #  ceiling
+  1: 1 #  floor
+  2: 2 #  wall
+  3: 3 #  beam
+  4: 4 #  column
+  5: 5 #  window
+  6: 6 #  door
+  7: 7 #  table
+  8: 8 #  chair
+  9: 9 #  sofa
+  10: 10 #  bookcase
+  11: 11 #  board
+  12: 12 #  clutter
+
+learning_map_inv:
+#  -1: -1
+  0: 0 #  ceiling
+  1: 1 #  floor
+  2: 2 #  wall
+  3: 3 #  beam
+  4: 4 #  column
+  5: 5 #  window
+  6: 6 #  door
+  7: 7 #  table
+  8: 8 #  chair
+  9: 9 #  sofa
+  10: 10 #  bookcase
+  11: 11 #  board
+  12: 12 #  clutter
+
+learning_map:
+#  -1: -1
+  0: 0 #  ceiling
+  1: 1 #  floor
+  2: 2 #  wall
+  3: 3 #  beam
+  4: 4 #  column
+  5: 5 #  window
+  6: 6 #  door
+  7: 7 #  table
+  8: 8 #  chair
+  9: 9 #  sofa
+  10: 10 #  bookcase
+  11: 11 #  board
+  12: 12 #  clutter
+
+color_map: # rgb
+  -1: [128., 128., 128.]
+  0: [0., 0., 0.]
+  1: [174., 199., 232.]
+  2: [152., 223., 138.]
+  3: [31., 119., 180.]
+  4: [255., 187., 120.]
+  5: [188., 189., 34.]
+  6: [140., 86., 75.]
+  7: [255., 152., 150.]
+  8: [214., 39., 40.]
+  9: [197., 176., 213.]
+  10: [148., 103., 189.]
+  11: [196., 156., 148.]
+  12: [23., 190., 207.]
+
+
+names:
+  0: 'ceiling'
+  1: 'floor'
+  2: 'wall'
+  3: 'beam'
+  4: 'column'
+  5: 'window'
+  6: 'door'
+  7: 'table'
+  8: 'chair'
+  9: 'sofa'
+  10: 'bookcase'
+  11: 'board'
+  12: 'clutter'
+
+content:
+#  -1: 0.0
+  0: 0.24
+  1: 0.24
+  2: 0.18
+  3: 0.0186
+  4: 0.0156
+  5: 0.0138
+  6: 0.04
+  7: 0.04
+  8: 0.05
+  9: 0.0048
+  10: 0.04
+  11: 0.0072
+  12: 0.11
+
+synonyms:  # http://wordnetweb.princeton.edu/perl/webwn, https://www.thesaurus.com/
+  0: ["ceiling"] # , "the overhead upper surface of a covered space"]
+  1: ["floor"] # , "the inside lower horizontal surface"]
+  2: ["wall"] # , "an architectural partition used to divide or enclose an area"]
+  3: ["beam"] # , "long thick piece of wood or metal or concrete used in construction"]
+  4: ["column"] # , "a tall vertical cylindrical structure standing upright and used to support a structure"]
+  5: ["window"] # , "a framework of wood or metal that contains a glass windowpane and is built into a wall or roof to admit light or air"]
+  6: ["door"] # , "a swinging or sliding barrier that will close the entrance to a room or building or vehicle"]
+  7: ["table"] # , "a piece of furniture having a smooth flat top that is usually supported by one or more vertical legs"]
+  8: ["chair"] # , "a seat for one person, with a support for the back"]
+  9: ["sofa"] # , "an upholstered seat for more than one person"]
+  10: ["bookcase"] # , "a piece of furniture with shelves for storing books"]
+  11: ["board"] # , "a stout length of sawn timber; made in a wide variety of sizes and used for many purposes"]
+  12: ["clutter"] # , "a confused multitude of things"]

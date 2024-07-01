@@ -21,4 +21,89 @@ Authors:
         [Fabio Poiesi](https://scholar.google.co.uk/citations?user=BQ7li6AAAAAJ&hl)
 
 
-Camera ready and code will be released soon!
+## Installation
+
+The code has been tested with Python 3.8, CUDA 11.3, pytorch 1.10.1 and pytorch-lighting 1.4.8. Any other version may require to update the code for compatibility.
+
+### Conda
+To run the code, you need to install:
+- [Pytorch 1.10.1](https://pytorch.org/get-started/previous-versions/)
+- [Minkowski Engine](https://github.com/NVIDIA/MinkowskiEngine)
+- [Pytorch-Lighting 1.4.8](https://www.pytorchlightning.ai) (be sure to install torchmetrics=0.7.2)
+- [Scipy 1.7.3](https://scipy.org/install/)
+- [Wandb](https://docs.wandb.ai/quickstart)
+
+## Data preparation
+To download the data follow the instructions provided by [SemanticKITTI](http://www.semantic-kitti.org),  [SemanticPOSS](http://www.poss.pku.edu.cn/semanticposs.html) and [S3DIS](http://buildingparser.stanford.edu/dataset.html). Then, use this structure of the folders for SemanticKITTI and SemanticPOSS:
+```
+./
+├── 
+├── ...
+└── path_to_data_shown_in_yaml_config/
+      └── sequences
+            ├── 00/           
+            │   ├── velodyne/	
+            |   |	   ├── 000000.bin
+            |   |	   ├── 000001.bin
+            |   |	   └── ...
+            │   └── labels/ 
+            |          ├── 000000.label
+            |          ├── 000001.label
+            |          └── ...
+            └── ...
+```
+Use this structure for S3DIS:
+```
+./
+├── 
+├── ...
+└── path_to_data_shown_in_yaml_config/
+      └── Area1
+            ├── labels/           
+            │   ├── conferenceRoom_1.npy
+            |   ├── conferenceRoom_2.npy
+            |   └──...
+            └── points/ 
+                ├── conferenceRoom_1.npy
+                ├── conferenceRoom_2.npy
+                └──...
+```
+
+## Commands
+### Discovery
+To run the discovery step:
+```
+python main_discover.py -s [SPLIT NUMBER] --dataset [SemanticPOSS, SemanticKITTI, S3DIS]
+```
+For additional command line arguments, run:
+```
+python main_discover.py -h
+```
+To reproduce the paper results run:
+
+```
+python main_discover.py -s [SPLIT NUMBER] --dataset SemanticPOSS --dataset_config config/semposs_dataset.yaml --downsampling=60000 --voxel_size=0.05 --batch_size=4 --num_heads=5 --overcluster_factor=3 --use_scheduler --epochs=10 --adapting_epsilon_sk --use_uncertainty_queue --use_uncertainty_loss --uncertainty_percentile=0.3 --clip_path=clip_chkpts/nuscenes_openseg.pth.tar --clip_weight=7.0
+```
+```
+python main_discover.py -s [SPLIT NUMBER] --dataset SemanticKITTI --dataset_config config/semkitti_dataset.yaml --downsampling=80000 --voxel_size=0.05 --batch_size=4 --num_heads=5 --overcluster_factor=3 --use_scheduler --epochs=10 --adapting_epsilon_sk --use_uncertainty_queue --use_uncertainty_loss --uncertainty_percentile=0.5 --clip_path=clip_chkpts/nuscenes_openseg.pth.tar --clip_weight=3.0
+```
+```
+python main_discover.py -s [SPLIT NUMBER] --dataset S3DIS --dataset_config config/s3dis_dataset.yaml --downsampling=80000 --voxel_size=0.025 --batch_size=2 --num_heads=5 --overcluster_factor=3 --use_scheduler --epochs=50 --queue_start_epoch=10 --warmup_epochs=20 --adapting_epsilon_sk --use_uncertainty_queue --use_uncertainty_loss --uncertainty_percentile=0.3 --clip_path=clip_chkpts/scannet_openseg.pth.tar --clip_weight=7.0
+```
+
+## Citing our work
+
+Please cite the following paper if you use our code:
+
+```latex
+@article{riz2023snops,
+  title={Novel Class Discovery for 3D Point Cloud Semantic Segmentation},
+  author={Riz, Luigi and Saltori, Cristiano and Wang, Yiming and Ricci, Elisa and Poiesi, Fabio},
+  journal={}
+  year={2023}
+}
+```
+
+## Acknowledgements
+
+This project has received funding from the European Union’s Horizon Europe research and innovation programme under the projects AI-PRISM (grant agreement No. 101058589) and FEROX (grant agreement No. 101070440).
