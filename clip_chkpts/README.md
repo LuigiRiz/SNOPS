@@ -1,0 +1,1 @@
+Place here the checkpoints for the auxiliary network

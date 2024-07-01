@@ -91,6 +91,8 @@ python main_discover.py -s [SPLIT NUMBER] --dataset SemanticKITTI --dataset_conf
 python main_discover.py -s [SPLIT NUMBER] --dataset S3DIS --dataset_config config/s3dis_dataset.yaml --downsampling=80000 --voxel_size=0.025 --batch_size=2 --num_heads=5 --overcluster_factor=3 --use_scheduler --epochs=50 --queue_start_epoch=10 --warmup_epochs=20 --adapting_epsilon_sk --use_uncertainty_queue --use_uncertainty_loss --uncertainty_percentile=0.3 --clip_path=clip_chkpts/scannet_openseg.pth.tar --clip_weight=7.0
 ```
 
+Checkpoints to be placed in the `clip_chkpts` folder are available for downlaod in the official [OpenScene](https://github.com/pengsongyou/openscene) repository.
+
 ## Citing our work
 
 Please cite the following paper if you use our code:
