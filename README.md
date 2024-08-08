@@ -98,14 +98,17 @@ Checkpoints to be placed in the `clip_chkpts` folder are available for downlaod 
 Please cite the following paper if you use our code:
 
 ```latex
-@article{riz2023snops,
+@article{riz2024snops,
   title={Novel Class Discovery for 3D Point Cloud Semantic Segmentation},
   author={Riz, Luigi and Saltori, Cristiano and Wang, Yiming and Ricci, Elisa and Poiesi, Fabio},
-  journal={}
-  year={2023}
+  journal={International Journal of Computer Vision}
+  pages={1--22},
+  year={2024},
+  publisher={Springer}
 }
 ```
 
 ## Acknowledgements
 
-This project has received funding from the European Union’s Horizon Europe research and innovation programme under the projects AI-PRISM (grant agreement No. 101058589) and FEROX (grant agreement No. 101070440).
+This project has received funding from the European Union’s Horizon Europe research and innovation programme under the projects AI-PRISM (grant agreement No. 101058589) and FEROX (grant agreement No. 101070440). This work was also partially sponsored by the PRIN project LEGO-AI (Prot. 2020TA3K9N), EU ISFP PRECRISIS (ISFP-2022-TFI-AG-PROTECT-02-101100539), PNRR ICSC National Research Centre for HPC, Big Data and Quantum Computing (CN00000013) and the FAIR - Future AI Research (PE00000013), funded by NextGeneration EU.
+It was carried out in the Vision and Learning joint laboratory of FBK and UNITN.
